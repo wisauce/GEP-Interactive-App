@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Reset dan base styles */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh ;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior: none;
+  }
+
+  /* Font Declarations */
+  @font-face {
+    font-family: 'Asal Usil';
+    src: url('/fonts/asalusil.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Blue Curve';
+    src: url('/fonts/Bluecurve-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Blue Curve';
+    src: url('/fonts/Bluecurve-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Blue Curve';
+    src: url('/fonts/Bluecurve-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Shoplifter';
+    src: url('/fonts/shoplift.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r;
+  }
+  
+  .bg-gradient-ludic {
+    @apply bg-gradient-to-r from-[#E563A2] via-[#EF9F77] to-[#5A29E5];
+  }
+}
+
+/* Animation Keyframes */
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
