@@ -10,7 +10,7 @@ import BubbleMedia from "./bubble-media";
 import NextSection from "./next-section";
 import { useRouter } from "next/navigation";
 import Poll from "./poll";
-import Vote from "./Vote";
+import Vote from "./vote";
 
 export default function Messaging({Messages, section}) {
   const [activeGroups, setActiveGroups] = useState([0]);
