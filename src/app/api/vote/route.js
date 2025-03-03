@@ -43,7 +43,7 @@ export async function POST(request) {
     
     // Send vote data to Upstash
     for (const index of selectedItems) {
-      const url = `${process.env.UPSTASH_REDIS_REST_URL}/incr/votes:${index}`;
+      const url = `${process.env.UPSTASH_REDIS_REST_URL}/incr/karya:${index}`;
       console.log(`Sending request to: ${url}`);
       
       try {
