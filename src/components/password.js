@@ -2,11 +2,11 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-export default function Password({show, setShow}) {
+export default function Password({show, setShow, section}) {
   const [pass, setPassInput] = useState("");
 
   useEffect(() => {
-    if (pass == process.env.NEXT_PUBLIC_PASSWORD) {
+    if (pass == (section == 1 ? process.env.NEXT_PUBLIC_PASSWORD1 : process.env.NEXT_PUBLIC_PASSWORD2)) {
       setShow(false)
     }
   }, [pass]);
