@@ -47,9 +47,8 @@ export async function POST(request) {
       console.log(`Sending request to: ${url}`);
       
       try {
-        const response = await axios.post(
+        const response = await axios.get(
           url,
-          {}, // Empty body
           {
             headers: {
               Authorization: `Bearer ${process.env.UPSTASH_REDIS_REST_TOKEN}`,
