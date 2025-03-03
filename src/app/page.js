@@ -1,13 +1,19 @@
 "use client"
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { setUserName } from "@/utils/nameToStorage";
+import Loading from "@/components/loading";
 
 export default function Home() {
   const [name, setNameInput] = useState("");
+  const [load, setLoad] = useState(true);
   const router = useRouter();
-
+  useEffect(()=> {
+    setTimeout(() => {
+      setLoad(false);
+    }, 1000);
+  },[])
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name.trim() === "") return;
@@ -16,6 +22,7 @@ export default function Home() {
   };
   return (
     <div className="flex justify-center items-center h-[100vh] p-4">
+      {load && <Loading/>}
       <div className="fixed w-[100vw] h-[100vh] -z-50">
           <Image 
             src="/images/bg-auth.webp" 

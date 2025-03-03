@@ -10,7 +10,7 @@ export default function City() {
       <Messaging
         Messages={Messages}
         Artworks={Artworks}
-        section={1}
+        section={2}
       />
     </div>
   );

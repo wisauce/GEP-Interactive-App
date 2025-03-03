@@ -1,7 +1,26 @@
 import { useState } from "react"
 import Image from "next/image"
 
-export default function Vote() {
+
+function ArtCard() {
+  return(
+    <div className="aspect-square rounded-xl relative overflow-hidden">
+      <div className="absolute inset-0 bg-[#15358D] z-10 bg-opacity-70 flex justify-center items-center">
+        <p className="text-2xl w-full">AKU SUKA<br></br>YANG INI!</p>
+      </div>
+      <Image 
+        src="/images/kine-FachriAlbar-Fadhal.jpg" 
+        alt="background" 
+        fill
+        sizes=""
+        className="object-cover opacity-90 select-none"
+      />
+    </div>
+  )
+}
+
+export default function Vote({Artworks}) {
+  const artworks = Artworks().lists
   const [search,setSearch] = useState()
   return(
     <div className="z-50 bg-[#FEF7DD] absolute w-full">
@@ -25,30 +44,12 @@ export default function Vote() {
         </div>
         
         <div className="grid grid-cols-2 grid-rows-10 gap-4 grid-flow-row font-asal-usil text-center text-[#F9EF6C]">
-          <div className="aspect-square rounded-xl relative overflow-hidden">
-            <div className="absolute inset-0 bg-[#15358D] z-10 bg-opacity-70 flex justify-center items-center">
-              <p className="text-2xl w-full">AKU SUKA<br></br>YANG INI!</p>
-            </div>
-            <Image 
-              src="/images/kine-FachriAlbar-Fadhal.jpg" 
-              alt="background" 
-              fill
-              sizes=""
-              className="object-cover opacity-90 select-none"
-            />
+          <div>
+            
           </div>
-          <div className="bg-black aspect-square"></div>
-          <div className="bg-black aspect-square"></div>
-          <div className="bg-black aspect-square"></div>
-          <div className="bg-black aspect-square"></div>
-          <div className="bg-black aspect-square"></div>
-          <div className="bg-black aspect-square"></div>
-          <div className="bg-black aspect-square"></div>
-          <div className="bg-black aspect-square"></div>
-          <div className="bg-black aspect-square"></div>
-          <div className="bg-black aspect-square"></div>
-          <div className="bg-black aspect-square"></div>
-          <div className="bg-black aspect-square"></div>
+          {artworks.map((item,index) => {
+
+          })}
         </div>
           
       </div>
