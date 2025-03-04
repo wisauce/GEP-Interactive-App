@@ -7,8 +7,8 @@ export default function Loading() {
         <Image 
           src="/images/Logo-Ludic.webp" 
           alt="background" 
-          height={200}
-          width={200}
+          height={362}
+          width={728}
           className="object-cover select-none"
         />
         <h1 className="font-blue-curve text-[#25368D] text-center">Ganesha Exhibition Programme by LFM ITB</h1>
