@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation";
 import Poll from "./poll";
 import Vote from "./vote";
 
-export default function Messaging({Messages, section}) {
+export default function Messaging({Messages, Artworks, section}) {
   const [activeGroups, setActiveGroups] = useState([0]);
   const [counter, setCounter] = useState(0)
   const routes = ["city1", "city2", "city3", "city4"]
@@ -54,7 +54,9 @@ export default function Messaging({Messages, section}) {
   };
   return (
     <div>
-      <Vote/>
+      <Vote
+        Artworks={Artworks}
+      />
       <Password
         show={show}
         setShow={setShow}
