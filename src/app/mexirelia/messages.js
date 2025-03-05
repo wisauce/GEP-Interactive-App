@@ -1,6 +1,6 @@
 import { getUserName } from "@/utils/nameToStorage"
 export default function Messages() {
-  const name = getUserName()
+  const nama = getUserName()
   return (
     {
       "texts": [

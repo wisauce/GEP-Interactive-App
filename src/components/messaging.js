@@ -10,9 +10,8 @@ import NextSection from "./next-section";
 import { useRouter } from "next/navigation";
 import Poll from "./poll";
 import Vote from "./vote";
-import { artworks } from "@/app/gate-of-ludic/artwoks";
 
-export default function Messaging({Messages, Artworks, section}) {
+export default function Messaging({Messages, artworks, section}) {
   const [hasPollingBeenOpened, setHasPollingBeenOpened] = useState(false);
   const [activeGroups, setActiveGroups] = useState([0]);
   const [counter, setCounter] = useState(0)

@@ -1,6 +1,6 @@
 "use client"
 
-import Artworks from "./artworks";
+import {artworks} from "./artworks";
 import Messages from "./messages.js";
 import Messaging from "@/components/messaging";
 
@@ -9,7 +9,7 @@ export default function City() {
     <div>
       <Messaging
         Messages={Messages}
-        Artworks={Artworks}
+        artworks={artworks}
         section={3}
       />
     </div>

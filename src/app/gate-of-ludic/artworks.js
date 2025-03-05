@@ -1,11 +1,15 @@
-export default function Artworks() {
-  return (
-    {
-      "lists": [
-        "whole-my-head",
-        "cerita-kemarin",
-        "kuingat permanen"
-      ]  
-    }
-  )
-}
+export const artworks =
+[
+  "foto-duduk-felysse.jpg",
+  "foto-BadPhotosOnly-Jona.jpg",
+  "foto-CrackedConcrete-Nughty.jpg",
+  "foto-susuhuruhara-Rafly&Ahsan.jpg",
+  "foto-100thSadali-Fadhal.jpg",
+  "foto-untitled-Iman.jpg",
+  "foto-ThroughTheMist-Rayyi.jpg",
+  "foto-ChildlikeJoyandInnocence-Rafly.jpg",
+  "foto-SelfPortrait-Fadhal.jpg",
+  "foto-LookUp-Fadhal.jpg",
+  "kine-DuniaManasuka-Fadhal.jpg",
+  "kine-ALoopInTime-Hans.jpg"
+]    

@@ -18,7 +18,7 @@ export default function Messages() {
         [
           {
             "type": "mascot",
-            "text": "Selamat datang di Kreoskaura, sebuah daerah di mana tidak ada istilah normal atau tertata!"
+            "text": `Selamat datang di Kreoskaura, ${nama}, sebuah daerah di mana tidak ada istilah normal atau tertata!`
           },
           {
             "type": "mascot",
@@ -69,7 +69,7 @@ export default function Messages() {
           },
           {
             "type": "user",
-            "text1": "Aku sudah lihat!"
+            "text1": "Ya, aku melihatnya!"
           }
         ],
         [
