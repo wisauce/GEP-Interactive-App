@@ -18,7 +18,7 @@ export default function Home() {
     e.preventDefault();
     if (name.trim() === "") return;
     setUserName(name);
-    router.push("/city1");
+    router.push("/gate-of-ludic");
   };
   return (
     <div className="flex justify-center items-center h-[100vh] p-4">

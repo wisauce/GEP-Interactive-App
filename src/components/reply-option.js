@@ -27,7 +27,7 @@ export default function ReplyOption({text1, text2, next, section}) {
           </div>
         }
         {
-          op2 &&
+          op2 && text2 &&
           <div onClick={() => {set1(false); setClicked(true);}} 
           style={{
             backgroundColor: clicked ? color : "transparent",

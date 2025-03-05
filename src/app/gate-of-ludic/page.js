@@ -1,7 +1,7 @@
 "use client"
 
 import {artworks} from "./artwoks";
-import Messages from "./city";
+import Messages from "./messages";
 import Messaging from "@/components/messaging";
 
 export default function City() {

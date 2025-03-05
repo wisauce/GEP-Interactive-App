@@ -1,48 +1,50 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 
 export default function MascotInlineConversation({ onComplete, section }) {
   const [messages, setMessages] = useState([]);
   const [completed, setCompleted] = useState(false);
+  const lastMessageRef = useRef(null);
   
-  // Define the color based on section
   const color = section == 1 ? "#214CBB" : 
                 section == 2 ? "#a22306" : 
                 section == 3 ? "#347562" : "#ab166a";
   
-  // Initialize conversation
+  const scrollToBottom = () => {
+    setTimeout(() => {
+      if (lastMessageRef.current) {
+        lastMessageRef.current.scrollIntoView({ behavior: 'auto', block: 'end' });
+      }
+    }, 100);
+  };
+  
   useEffect(() => {
-    // Start with the first mascot message and options
     setMessages([
       {
         id: 1,
         sender: 'mascot',
-        text: 'Tell me if you want to leave',
+        text: `${section == 4 ? 'Maukah kamu ikut memberi dampak?' : 'Kabari aku kalau misalnya kamu sudah siap untuk melanjutkan perjalanan ini'}`,
         options: [
-          { text: 'Yes, I want to leave now', nextStep: 'confirm-leave' },
-          { text: 'No, I want to stay', nextStep: 'restart' }
+          { text: `${section == 4 ? 'MAUUU!' : 'Aku sudah selesai lihat-lihat, ayo kita lanjut!'}`, nextStep: `${section == 4 ? 'complete' : 'confirm-leave'}`},
+          { text: `${section == 4 ? 'YESSIR!' : 'Aku masih mau di sini'}`, nextStep: `${section == 4 ? 'complete' : 'confirm-leave'}`},
         ]
       }
     ]);
   }, []);
   
-  // Complete the conversation when finished
   useEffect(() => {
     if (completed) {
       onComplete();
     }
   }, [completed, onComplete]);
   
-  // Handle user selection
   const handleSelection = (messageId, option) => {
-    // Update messages to replace options with user selection
     setMessages(prev => prev.map(msg => 
       msg.id === messageId 
         ? { ...msg, options: null } // Remove options
         : msg
     ));
     
-    // Add user response
     const newUserMessage = {
       id: Date.now(),
       sender: 'user',
@@ -52,32 +54,32 @@ export default function MascotInlineConversation({ onComplete, section }) {
     
     setMessages(prev => [...prev, newUserMessage]);
     
-    // Determine next step
+    scrollToBottom();
+    
     setTimeout(() => {
       if (option.nextStep === 'confirm-leave') {
         addMascotMessageWithOptions(
-          'Are you sure?',
+          'Apakah kamu yakin?',
           [
-            { text: "Yes, I'm sure", nextStep: 'complete' },
-            { text: "No, I changed my mind", nextStep: 'restart' }
+            { text: "Iya, ayo kita berangkat!", nextStep: 'complete' },
+            { text: "Eh gajadi deh, tunggu dulu bentar", nextStep: 'restart' }
           ]
         );
       } else if (option.nextStep === 'restart') {
         addMascotMessageWithOptions(
-          'Tell me if you want to leave',
+          'Oke, bilang aja ya',
           [
-            { text: 'Yes, I want to leave now', nextStep: 'confirm-leave' },
-            { text: 'No, I want to stay', nextStep: 'restart' }
+            { text: 'Oke sip sudah selesai, ayo berangkat!', nextStep: 'confirm-leave' },
+            { text: 'Tunggu bentarrr', nextStep: 'restart' }
           ]
         );
       } else if (option.nextStep === 'complete') {
-        addMascotMessage('Alright, moving to the next page...');
+        addMascotMessage('Oke lanjuttt');
         setTimeout(() => setCompleted(true), 1000);
       }
     }, 500);
   };
   
-  // Add a mascot message with options
   const addMascotMessageWithOptions = (text, options) => {
     const newMessage = {
       id: Date.now(),
@@ -87,9 +89,10 @@ export default function MascotInlineConversation({ onComplete, section }) {
     };
     
     setMessages(prev => [...prev, newMessage]);
+    
+    scrollToBottom();
   };
   
-  // Add a mascot message without options
   const addMascotMessage = (text) => {
     const newMessage = {
       id: Date.now(),
@@ -99,15 +102,19 @@ export default function MascotInlineConversation({ onComplete, section }) {
     };
     
     setMessages(prev => [...prev, newMessage]);
+    
+    scrollToBottom();
   };
   
   return (
       <div className="flex flex-col gap-3 font-blue-curve">
-        {messages.map((message) => (
-          <div key={message.id} className="flex flex-col gap-2">
-            {/* Message bubble */}
+        {messages.map((message, index) => (
+          <div 
+            key={message.id} 
+            className="flex flex-col gap-2"
+            ref={index === messages.length - 1 ? lastMessageRef : null}
+          >
             {message.sender === 'mascot' ? (
-              // Mascot message with your exact styling
               <div className={`self-start rounded-3xl px-6 py-3 max-w-[80vw] relative ${
                 section == 1 ? "text-[#25368D] bg-[#DFF6FF]" : 
                 section == 2 ? "text-[#a22306] bg-[#fbdc4c]" : 
@@ -128,7 +135,6 @@ export default function MascotInlineConversation({ onComplete, section }) {
                 </p>
               </div>
             ) : (
-              // User message
               <div 
                 className="self-end max-w-[80vw] rounded-3xl px-6 py-3 text-white"
                 style={{ backgroundColor: color }}
@@ -137,7 +143,6 @@ export default function MascotInlineConversation({ onComplete, section }) {
               </div>
             )}
             
-            {/* Options - only shown for mascot messages with options */}
             {message.sender === 'mascot' && message.options && (
               <div className="flex font-blue-curve flex-col items-end gap-2 mb-3">
                 {message.options.map((option, index) => (
