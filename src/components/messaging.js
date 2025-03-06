@@ -15,24 +15,13 @@ export default function Messaging({Messages, artworks, section}) {
   const [hasPollingBeenOpened, setHasPollingBeenOpened] = useState(false);
   const [activeGroups, setActiveGroups] = useState([0]);
   const [counter, setCounter] = useState(0)
-  const routes = ["gate-of-ludic", "kreoskaura", "neoneshia", "mexirelia", "leave", "bonus", "secret-gift"]
+  const routes = ["gate-of-ludic", "kreoskaura", "neoneshia", "mexirelia", "gift"]
   const router = useRouter()
   const [show, setShow] = useState(true);
-  const messagesEndRef = useRef(null);
   const [Polling, openPolling] = useState(false);
 
   const texts = Messages().texts
   const [visibleItems, setVisibleItems] = useState(texts.map(() => []));
-  
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "auto" });
-  };
-
-  useEffect(() => {
-    if (!show) {
-      scrollToBottom();
-    }
-  }, [visibleItems, show, activeGroups]);
 
   useEffect(() => {
     if (!show) {
@@ -89,7 +78,7 @@ export default function Messaging({Messages, artworks, section}) {
         />
       </div>
       <div className="absolute inset-0 overflow-y-auto overscroll-contain">
-        <div className="flex flex-col-reverse min-h-full">
+        <div className="flex flex-col-reverse max-h-full overflow-auto">
           <div className="w-full flex flex-col p-4 justify-end gap-4">
             {texts.map((group, groupIndex) => (
               activeGroups.includes(groupIndex) && (
@@ -139,7 +128,6 @@ export default function Messaging({Messages, artworks, section}) {
                 </div>
               )
             ))}
-            <div ref={messagesEndRef} />
           </div>
         </div>
       </div>
