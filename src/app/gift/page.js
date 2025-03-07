@@ -56,8 +56,6 @@ export default function Home() {
       }, 500);
     }
   };
-  const [show, setShow] = useState(true);
-  const section = 5
 
   return (
     <>

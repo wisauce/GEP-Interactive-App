@@ -21,5 +21,6 @@ export const artworks =
   "kine-Arcane-Cetta.jpg", // Arcane: In the Face of a New Age (closest match)
   "kine-UnChienAndalou-Fadhal.jpg", // Un Chien Andalou (1929)
   "foto-MixMediaPhototerapheutic-preevenfoto.jpg",
-  "ptjkn-spatiotemporal-Fadhal.jpg" // Spatio Temporal #6 (closest match)
+  "ptjkn-spatiotemporal-Fadhal.jpg",
+  "kine-ISawTheTVGlow-Pepen.jpg" // Spatio Temporal #6 (closest match)
 ]    

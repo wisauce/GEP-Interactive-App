@@ -24,5 +24,6 @@ export const artworks =
   "kine-EkLadki-Rhea", // Ek Ladki Ko DekhaToh Aisa Laga (closest match)
   "kine-History(ofthe)cinema-Chris.jpg", // HISTORY (OF CINEMA) AS HARDCORE PORNOGRAPHY (closest match)
   "kine-the last dance-kineparty", // The Last Dance
-  "kine-Pow-Catur"
+  "kine-Pow-Catur",
+  "video_rumahsakit_VPN"
 ]    
