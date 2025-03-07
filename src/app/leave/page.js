@@ -16,11 +16,11 @@ export default function() {
     // Check if today is one of our target dates (March 7-9, 2025)
     if (year === 2025 && month === 3) {
       if (day === 7) {
-        setImagePath("/images/pemutaran7.jpg") // Image for March 7
+        setImagePath("/images/pemutaran7.png") // Image for March 7
       } else if (day === 8) {
-        setImagePath("/images/pemutaran8.jpg") // Image for March 8
+        setImagePath("/images/pemutaran8.png") // Image for March 8
       } else if (day === 9) {
-        setImagePath("/images/pemutaran9.jpg") // Image for March 9
+        setImagePath("/images/pemutaran9.png") // Image for March 9
       }
     }
   }, []) // Empty dependency array ensures this runs once on component mount
@@ -44,8 +44,8 @@ export default function() {
         <Image 
           src={imagePath}
           alt="background" 
-          height={200}
-          width={300}
+          height={280}
+          width={350}
           className="object-cover select-none"
         />
       </div>
