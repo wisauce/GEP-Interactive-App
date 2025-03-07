@@ -1,6 +1,9 @@
 export const artworks =
 [
+  "kine-DuniaManasuka-Fadhal.jpg",
+  "kine-ALoopInTime-Hans.jpg",
   "foto-duduk-felysse.jpg",
+  "foto-Eyesonme-Bhagas.jpg",
   "foto-BadPhotosOnly-Jona.jpg",
   "foto-CrackedConcrete-Nughty.jpg",
   "foto-susuhuruhara-Rafly&Ahsan.jpg",
@@ -10,6 +13,4 @@ export const artworks =
   "foto-ChildlikeJoyandInnocence-Rafly.jpg",
   "foto-SelfPortrait-Fadhal.jpg",
   "foto-LookUp-Fadhal.jpg",
-  "kine-DuniaManasuka-Fadhal.jpg",
-  "kine-ALoopInTime-Hans.jpg"
 ]    

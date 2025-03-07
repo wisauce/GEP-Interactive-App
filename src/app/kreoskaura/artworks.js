@@ -15,10 +15,14 @@ export const artworks =
   "video-hmm,todayiwill-Zidan.jpg", // Hmm, Today I Wil...
   "video-Intrusi-Fadhal.jpg", // Intrusi
   "video-ShitpostCompilationNo2-ZidanIS.jpg", // Sh*t post compilation no 2
+  "video-makanmalamgratis-Ardina,Jeje,Vaness,Tazqi.jpg",
+  "video-gotongroyong-Ahsan.jpg",
+  "video-12rbseminggu-Ara24.jpg",
   "kine-Flow-Ijay.jpg", // Flow: A Journey without Words
   "kine-AshiapMan-Fadhal.jpg", // Ashiap Man
   "kine-AshiapMan-Iman.jpg", // Ashiap Man (another entry)
-  "kine-EkLadki-Rhea", // Ek Ladki Ko Dekha Toh Aisa Laga (closest match)
+  "kine-EkLadki-Rhea", // Ek Ladki Ko DekhaToh Aisa Laga (closest match)
   "kine-History(ofthe)cinema-Chris.jpg", // HISTORY (OF CINEMA) AS HARDCORE PORNOGRAPHY (closest match)
-  "kine-the last dance-kineparty" // The Last Dance
+  "kine-the last dance-kineparty", // The Last Dance
+  "kine-Pow-Catur"
 ]    

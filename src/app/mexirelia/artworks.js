@@ -19,5 +19,15 @@ export const artworks =
   "kine-Nowhere-Catur", // In the Middle of Nowhere (closest match)
   "kine-Kira-Fadhal.jpg", // Kira, Duka, & Air Mata (closest match)
   "ptjkn-unrthdxfilmfest-PavDhika&Reljak.jpg", // Paradoxal (closest match)
-  "kine-SelamatPagiMalam-Vara" // Selamat Pagi Malam (closest match)
+  "kine-SelamatPagiMalam-Vara", // Selamat Pagi Malam (closest match)
+  "foto-DilarangBicara!-Lippo.jpg",
+  "foto-Relaxed-Lippo.jpg",
+  "video-to_willow-Niran.jpg",
+  "video-onaboilingrage-Niran.jpg",
+  "video-waves-Pepen.jpg",
+  "video-metnuyer-Zahra.jpg",
+  "video-mata&cincin-Zeave.jpg",
+  "video-serbiangurl-Cetta,Laras,Pepen,Wibi.jpg",
+  "video-sebelumdilandabencana-funky.jpg",
+  "video-jatinanorwhat-PepenZidos.jpg"
 ]    

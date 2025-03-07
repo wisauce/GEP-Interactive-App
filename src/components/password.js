@@ -1,6 +1,5 @@
 "use client"
 import { useState, useEffect } from "react";
-import Image from "next/image";
 
 export default function Password({show, setShow, section}) {
   const [pass, setPassInput] = useState("");
