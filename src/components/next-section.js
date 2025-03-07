@@ -20,7 +20,7 @@ export default function MascotInlineConversation({ onComplete, section }) {
         text: `${section == 4 ? 'Maukah kamu ikut memberi dampak?' : 'Kabari aku kalau misalnya kamu sudah siap untuk melanjutkan perjalanan ini'}`,
         options: [
           { text: `${section == 4 ? 'MAUUU!' : 'Aku sudah selesai lihat-lihat, ayo kita lanjut!'}`, nextStep: `${section == 4 ? 'complete' : 'confirm-leave'}`},
-          { text: `${section == 4 ? 'YESSIR!' : 'Aku masih mau di sini'}`, nextStep: `${section == 4 ? 'complete' : 'confirm-leave'}`},
+          { text: `${section == 4 ? 'YESSIR!' : 'Aku masih mau di sini'}`, nextStep: `${section == 4 ? 'complete' : 'restart'}`},
         ]
       }
     ]);
@@ -70,7 +70,7 @@ export default function MascotInlineConversation({ onComplete, section }) {
           ]
         );
       } else if (option.nextStep === 'complete') {
-        addMascotMessage('Oke lanjuttt');
+        addMascotMessage(section == 4 ? "TERIMA KASIH, UNDERDOG!" : 'Oke lanjuttt');
         setTimeout(() => setCompleted(true), 1000);
       }
     }, 1000);

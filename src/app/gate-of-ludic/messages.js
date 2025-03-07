@@ -23,34 +23,26 @@ export default function Messages() {
         [
           {
             "type": "mascot",
-            "text": `Halo ${nama}, aku maskot kuda PS4 yang akan memandumu!`
+            "text": `Halo ${nama}, aku Pirous, unicorn dari dunia ludic yang akan memandumu!`
           },
           {
             "type": "mascot",
-            "text": "SELAMAT DATANG di Ganesha Exhibition Programme 2025! Aku akan membawa kamu berjalan-jalan di Kota Ludic!"
-          },
-          {
-            "type": "mascot",
-            "text": "Ngomong-ngomong, teman rahasiaku menitipkan selebaran Catatan Kuratorial ini untuk kamu lihat kembali sepanjang perjalanan!"
-          },
-          {
-            "type": "mascot",
-            "text": "Mungkin ini dapat membantumu untuk mengingat kembali penjelajahan ke depan! Mau tahu?"
+            "text": "Selamat datang di Ganesha Exhibition Programme 2025!"
           },
           {
             "type": "user",
-            "text1": "Mauuu",
-            "text2": "Gasss"
+            "text1": "Haiii pirous!",
+            "text2": "Woah"
           }
         ],
         [
           {
-            "type": "media",
-            "text": "[INSERT IMAGE CATATAN KURATORIAL]"
+            "type": "mascot",
+            "text": "Now, let’s take a look around!"
           },
           {
             "type": "mascot",
-            "text": "Now, let’s take a look around!"
+            "text": "Saat ini kita berada tepat di luar kota Ludic."
           },
           {
             "type": "mascot",
@@ -74,7 +66,7 @@ export default function Messages() {
         [
           {
             "type": "mascot",
-            "text": "Aku jadi kepo, coba pilih karya ter-ludic menurut kamu!"
+            "text": "Aku jadi kepo, sebelum kita masuk ke kota, coba pilih karya ter-ludic menurut kamu!"
           },
           {
             "type": "vote"

@@ -61,12 +61,8 @@ export default function Messages() {
         ],
         [
           {
-            "type": "media",
-            "text": "Insert gif instruksi tarik (tunggu dari dokum)"
-          },
-          {
             "type": "mascot",
-            "text": "Tarik ‘Aku’ dan masukkan lagi agar yang lain bisa melihat juga!"
+            "text": "Tarik saja tetapi jangan lupa masukkan lagi ya agar yang lain bisa melihat juga!"
           },
           {
             "type": "mascot",
