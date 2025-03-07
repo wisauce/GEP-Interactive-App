@@ -2,11 +2,7 @@
 
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-
-// pages/index.js
 import { useState } from 'react';
-import Head from 'next/head';
-import Password from '@/components/password';
 
 export default function Home() {
   const [selectedGif, setSelectedGif] = useState(null);
@@ -14,18 +10,23 @@ export default function Home() {
   const gifs = [
     {
       id: 1,
-      url: "/images/ryo.gif",
+      url: "/images/letsplay.gif",
       alt: "Gift option 1"
     },
     {
       id: 2,
-      url: "/images/ryo.gif",
+      url: "/images/notpixar.gif",
       alt: "Gift option 2"
     },
     {
       id: 3,
-      url: "/images/ryo.gif",
+      url: "/images/OTW BANGG.gif",
       alt: "Gift option 3"
+    },
+    {
+      id: 4,
+      url: "/images/telephone.gif",
+      alt: "Gift option 4"
     }
   ];
 
@@ -50,8 +51,6 @@ export default function Home() {
       
       // Clean up
       document.body.removeChild(link);
-      
-      alert("Enjoy your gift!");
       setTimeout(() => {
         router.push("/leave")
       }, 500);
@@ -62,11 +61,6 @@ export default function Home() {
 
   return (
     <>
-      <Password
-        show={show}
-        setShow={setShow}
-        section={section}
-      />
       <div className="min-h-screen bg-[#FEF7DD] p-8">
       <main className="max-w-md mx-auto">
         <h1 className="text-4xl font-bold text-center text-[#15358D] my-6 font-blue-curve">

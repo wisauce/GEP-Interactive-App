@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (  
-    <html lang="en" className="scroll-pt-[4vw] bg-[#F9EF6C] overscroll-contain">
+    <html lang="en" className="bg-[#F9EF6C] w-full">
       <body className="w-full relative">
         {children}
         <Analytics/>

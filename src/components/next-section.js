@@ -5,18 +5,12 @@ export default function MascotInlineConversation({ onComplete, section }) {
   const [messages, setMessages] = useState([]);
   const [completed, setCompleted] = useState(false);
   const lastMessageRef = useRef(null);
-  
+  useEffect(() => {
+    scrollToBottom();
+  },[messages])
   const color = section == 1 ? "#214CBB" : 
                 section == 2 ? "#a22306" : 
                 section == 3 ? "#347562" : "#ab166a";
-  
-  const scrollToBottom = () => {
-    setTimeout(() => {
-      if (lastMessageRef.current) {
-        lastMessageRef.current.scrollIntoView({ behavior: 'auto', block: 'end' });
-      }
-    }, 100);
-  };
   
   useEffect(() => {
     setMessages([
@@ -30,8 +24,12 @@ export default function MascotInlineConversation({ onComplete, section }) {
         ]
       }
     ]);
-    scrollToBottom();
   }, []);
+
+  // Function to scroll to bottom
+  const scrollToBottom = () => {
+    lastMessageRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   
   useEffect(() => {
     if (completed) {
@@ -54,9 +52,6 @@ export default function MascotInlineConversation({ onComplete, section }) {
     };
     
     setMessages(prev => [...prev, newUserMessage]);
-    
-    scrollToBottom();
-    
     setTimeout(() => {
       if (option.nextStep === 'confirm-leave') {
         addMascotMessageWithOptions(
@@ -78,7 +73,7 @@ export default function MascotInlineConversation({ onComplete, section }) {
         addMascotMessage('Oke lanjuttt');
         setTimeout(() => setCompleted(true), 1000);
       }
-    }, 500);
+    }, 1000);
   };
   
   const addMascotMessageWithOptions = (text, options) => {
@@ -90,8 +85,6 @@ export default function MascotInlineConversation({ onComplete, section }) {
     };
     
     setMessages(prev => [...prev, newMessage]);
-    
-    scrollToBottom();
   };
   
   const addMascotMessage = (text) => {
@@ -103,8 +96,6 @@ export default function MascotInlineConversation({ onComplete, section }) {
     };
     
     setMessages(prev => [...prev, newMessage]);
-    
-    scrollToBottom();
   };
   
   return (

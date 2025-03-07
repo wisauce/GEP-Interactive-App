@@ -12,7 +12,7 @@ export default function Home() {
   useEffect(()=> {
     setTimeout(() => {
       setLoad(false);
-    }, 1000);
+    }, 3000);
   },[])
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,9 +21,9 @@ export default function Home() {
     router.push("/gate-of-ludic");
   };
   return (
-    <div className="flex justify-center items-center h-[100vh] p-4">
+    <div className="flex justify-center items-center h-[100dvh] p-4">
       {load && <Loading/>}
-      <div className="fixed w-[100vw] h-[100vh] -z-50">
+      <div className="fixed w-[100vw] h-full -z-50">
           <Image 
             src="/images/bg-auth.webp" 
             alt="background" 
@@ -39,7 +39,7 @@ export default function Home() {
             type="text"
             value={name}
             maxLength={20}
-            onChange={(e) => setNameInput(e.target.value)}
+            onChange={(e) => setNameInput(e.target.value.toUpperCase())}
             className=" px-8 py-4 rounded-[2rem] text-center placeholder:text-xl text-xl text-[#ABABAB] outline-none border-opacity-0 focus:border-opacity-100 border-4 border-[#ABABAB]"
             placeholder="Namaku..."
           />
