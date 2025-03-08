@@ -5,7 +5,6 @@ export const artworks =
   "foto-duduk-felysse.jpg",
   "foto-Eyesonme-Bhagas.jpg",
   "foto-BadPhotosOnly-Jona.jpg",
-  "foto-CrackedConcrete-Nughty.jpg",
   "foto-susuhuruhara-Rafly&Ahsan.jpg",
   "foto-100thSadali-Fadhal.jpg",
   "foto-untitled-Iman.jpg",
